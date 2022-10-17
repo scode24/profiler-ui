@@ -1,0 +1,45 @@
+.header {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header .title-space {
+    display: flex;
+    flex-direction: row;
+}
+
+.title-space .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-space .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .header-profile-pic {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .header-profile-pic img {
+    border-radius: 50%;
+    width: var(--header-profile-pic-width);
+    height: var(--header-profile-pic-height);
+}
+
+
+@media (min-width: 768px) {
+    .title-space .menu {
+        display: none;
+    }
+}

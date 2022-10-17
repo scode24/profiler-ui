@@ -1,0 +1,95 @@
+.node {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 5%;
+}
+
+.start-node {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 5%;
+    height: 75px;
+    margin-top: 70px;
+}
+
+.end-node {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 5%;
+    height: 150px;
+}
+
+.node .line {
+    border-left: 1px dotted black;
+    height: 150px;
+}
+
+.start-node .line {
+    border-left: 1px dotted black;
+    height: 75px;
+}
+
+.end-node .line {
+    border-left: 1px dotted black;
+    height: 75px;
+}
+
+.dot {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
+.node .mark {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.start-node .mark {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+.end-node .mark {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+}
+
+.item .left-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    word-wrap: break-word;
+    text-align: right;
+}
+
+.item .right-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: 200px; */
+    word-wrap: break-word;
+    text-align: left;
+}
