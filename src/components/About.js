@@ -23,14 +23,18 @@ function About() {
         <div>
             <h1>About</h1>
             <div className='sub-content-section'>
-                <div className='item sub-content-item-card' >
-                    <div className='icon'>
-                        {htmlPerser(iconMap['SubContent-Achievements'])}
-                    </div>
-                    <div className='info'>
-                        {/* <strong>{about.achievement}</strong> */}
-                        <span>{about.about}</span>
-                    </div>
+                <div className='sub-content-section-main'>
+                    {about !== undefined ?
+                        <div className='item sub-content-item-card'>
+                            <div className='icon'>
+                                {htmlPerser(iconMap['SubContent-About'])}
+                            </div>
+                            <div className='info'>
+                                <span style={{ 'textAlign': 'justify' }}>{about.about}</span>
+                            </div>
+                        </div>
+                        : <></>
+                    }
                 </div>
             </div>
         </div>
