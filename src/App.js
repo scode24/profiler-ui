@@ -9,6 +9,7 @@ import Skills from './components/Skills';
 import WorkingExp from './components/WorkingExp';
 import Qualification from './components/Qualification';
 import Achievements from './components/Achievements';
+import * as service from './services';
 
 function App() {
 
@@ -19,7 +20,15 @@ function App() {
     isInfoOpen: false
   });
 
+  const [menuList, setMenuList] = useState();
+
   useEffect(() => {
+
+    let url = window.location.href;
+    url = url.replace('http://', '');
+    url = url.replace('https://', '');
+    const email = url.split('/')[1];
+
     if (screenType.isTablet) {
       setCardState({
         isTitleOpen: false,
@@ -27,7 +36,43 @@ function App() {
         isInfoOpen: true
       })
     }
+
+    service.getMenuList(email)
+      .then(response => {
+        setMenuList(response);
+      })
+
+
   }, [screenType.isTablet])
+
+  const getNavOption = (page) => {
+    if (menuList !== undefined) {
+
+      let pageIndex = 0;
+      for (let index = 0; index < menuList.length; index++) {
+        if (menuList[index].title === page) {
+          pageIndex = index;
+          break;
+        }
+      }
+
+      if (pageIndex === 0) {
+        return {
+          'previous': null,
+          'next': menuList[pageIndex + 1].title,
+        }
+      } else if (pageIndex === menuList.length - 1) {
+        return {
+          'previous': menuList[pageIndex - 1].title,
+          'next': null
+        }
+      }
+      return {
+        'previous': menuList[pageIndex - 1].title,
+        'next': menuList[pageIndex + 1].title,
+      }
+    }
+  }
 
   const toggleCard = (cardName) => {
 
@@ -74,11 +119,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/:email' element={<Main state={cardState} />}>
-            <Route path='about' element={<About />} />
-            <Route path='skills' element={<Skills />} />
-            <Route path='qualification' element={<Qualification />} />
-            <Route path='workingExp' element={<WorkingExp />} />
-            <Route path='achievements' element={<Achievements />} />
+            <Route path='about' element={<About nav={getNavOption} />} />
+            <Route path='skills' element={<Skills nav={getNavOption} />} />
+            <Route path='qualification' element={<Qualification nav={getNavOption} />} />
+            <Route path='workingExp' element={<WorkingExp nav={getNavOption} />} />
+            <Route path='achievements' element={<Achievements nav={getNavOption} />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -3,6 +3,23 @@ import appProp from './application';
 
 export const serviceCacheMap = new Map();
 
+export const selectMenu = (menuTitle, email) => {
+    switch (menuTitle) {
+        case 'About':
+            return ('/' + email + '/about')
+        case 'Skills':
+            return ('/' + email + '/skills')
+        case 'Qualifications':
+            return ('/' + email + '/qualification')
+        case 'Working Experiences':
+            return ('/' + email + '/workingExp')
+        case 'Achievements':
+            return ('/' + email + '/achievements')
+        default:
+            return '/'
+    }
+}
+
 export const getMenuList = async (email) => {
     if (email !== undefined) {
 

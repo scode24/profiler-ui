@@ -4,9 +4,14 @@ import htmlPerser from 'html-react-parser';
 import * as service from '../services';
 import '../styles/Achievements.css';
 
-function Achievements() {
+import { useNavigate } from 'react-router-dom';
+
+function Achievements(props) {
 
     const [achievements, setAchievements] = useState();
+    const [email, setEmail] = useState();
+    const [navData, setNavData] = useState();
+    const navigator = useNavigate();
 
     useEffect(() => {
         let url = window.location.href;
@@ -14,11 +19,16 @@ function Achievements() {
         url = url.replace('https://', '');
         const email = url.split('/')[1];
 
+        setEmail(email);
+
         service.getAchievements(email)
             .then(response => {
                 setAchievements(response);
             })
-    }, [achievements])
+
+        setNavData(props.nav('Achievements'));
+
+    }, [achievements, props])
 
 
     return (
@@ -41,6 +51,14 @@ function Achievements() {
                             )
                         })
                         : <></>
+                    }
+
+
+                    {navData !== undefined ?
+                        <div className='item sub-content-item-card nav-page-bar'>
+                            {navData.previous !== null ? <span onClick={() => navigator(service.selectMenu(navData.previous, email))}>&lt; {navData.previous}</span> : <span></span>}
+                            {navData.next !== null ? <span onClick={() => navigator(service.selectMenu(navData.next, email))}>{navData.next} &gt;</span> : <span></span>}
+                        </div> : <></>
                     }
                 </div>
             </div>

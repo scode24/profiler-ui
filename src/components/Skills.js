@@ -4,10 +4,14 @@ import iconMap from '../icon-map.json';
 import htmlPerser from 'html-react-parser';
 import * as service from '../services';
 import '../styles/Skills.css';
+import { useNavigate } from 'react-router-dom';
 
-function Skills() {
+function Skills(props) {
 
     const [skills, setSkills] = useState();
+    const [email, setEmail] = useState();
+    const [navData, setNavData] = useState();
+    const navigator = useNavigate();
 
     useEffect(() => {
         let url = window.location.href;
@@ -15,11 +19,16 @@ function Skills() {
         url = url.replace('https://', '');
         const email = url.split('/')[1];
 
+        setEmail(email);
+
         service.getSkills(email)
             .then(response => {
                 setSkills(response);
             })
-    }, [skills])
+
+        setNavData(props.nav('Skills'));
+
+    }, [skills, props])
 
     return (
         <div>
@@ -43,8 +52,15 @@ function Skills() {
                         })
                         : <></>
                     }
-                </div>
 
+                    {navData !== undefined ?
+                        <div className='item sub-content-item-card nav-page-bar'>
+                            {navData.previous !== null ? <span onClick={() => navigator(service.selectMenu(navData.previous, email))}>&lt; {navData.previous}</span> : <span></span>}
+                            {navData.next !== null ? <span onClick={() => navigator(service.selectMenu(navData.next, email))}>{navData.next} &gt;</span> : <span></span>}
+                        </div> : <></>
+                    }
+
+                </div>
             </div>
         </div>
     )

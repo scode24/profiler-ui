@@ -67,7 +67,7 @@ function Stepper(props) {
                                 </div>
                             </div>
                             <div className="right-info">
-                                <h3>{info.rightPrimaryInfo}</h3>
+                                <strong>{info.rightPrimaryInfo}</strong>
                                 <span>{info.rightSecondaryInfo}</span>
                             </div>
                         </div>

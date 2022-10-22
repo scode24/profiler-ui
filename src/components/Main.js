@@ -94,7 +94,7 @@ function Main(props) {
                                                             {htmlPerser(iconMap['Link'])}
                                                         </div>
                                                         <div className='content'>
-                                                            <span>{menu.link}</span>
+                                                            <span><a href={menu.link}>{menu.link}</a></span>
                                                         </div>
                                                     </div>
                                                 </li>

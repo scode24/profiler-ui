@@ -157,6 +157,13 @@ h3 {
     width: 100%;
 }
 
+.nav-page-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
 @media (max-width: 991.98px) {
     .sub-content-section-main {
         width: 100%;
