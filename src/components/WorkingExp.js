@@ -4,7 +4,7 @@ import * as service from '../services'
 
 function WorkingExp() {
 
-    const [workingExpSource, setWorkingExpSource] = useState();
+    const [source, setSource] = useState();
 
     useEffect(() => {
         let url = window.location.href;
@@ -14,32 +14,25 @@ function WorkingExp() {
 
         service.getWorkingExps(email)
             .then(response => {
-                setWorkingExpSource(response);
+                let arr = []
+                response.forEach(element => {
+                    arr.push({
+                        'leftInfo': element.jobStartDate + " to " + element.jobEndDate,
+                        'rightPrimaryInfo': element.company,
+                        'rightSecondaryInfo': element.designation
+                    })
+                });
+
+                setSource(arr);
             })
-
-        if (workingExpSource !== undefined) {
-            let source = []
-            workingExpSource.forEach(obj => {
-                source.push({
-                    'leftInfo': obj.jobStartDate + ' - ' + obj.jobEndDate,
-                    'rightPrimaryInfo': obj.company,
-                    'rightSecondaryInfo': obj.designation
-                })
-            });
-
-            setWorkingExpSource(source);
-        }
-    }, [workingExpSource])
+    }, [])
 
     return (
         <div>
-            <h1>Working Experiences</h1>{console.log(workingExpSource)}
-            {workingExpSource !== undefined ?
-
-                < Stepper source={workingExpSource} /> :
-                <></>
-            }
-
+            <h1>Working Experiences</h1>
+            <div className='sub-content-section'>
+                < Stepper source={source} />
+            </div>
         </div>
     )
 }

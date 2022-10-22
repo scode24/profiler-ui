@@ -49,8 +49,14 @@ function Main(props) {
             case 'Skills':
                 navigate('/' + param.email + '/skills')
                 break;
+            case 'Qualifications':
+                navigate('/' + param.email + '/qualification')
+                break;
             case 'Working Experiences':
                 navigate('/' + param.email + '/workingExp')
+                break;
+            case 'Achievements':
+                navigate('/' + param.email + '/achievements')
                 break;
 
             default:

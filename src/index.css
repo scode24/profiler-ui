@@ -5,6 +5,8 @@
     --sub-content-panel-width: 350px;
     --icon-height: 20px;
     --icon-width: 20px;
+    --icon-sub-content-height: 30px;
+    --icon-sub-content-width: 30px;
     --profile-pic-height: 130px;
     --profile-pic-width: 130px;
     --header-profile-pic-height: 35px;
@@ -17,7 +19,9 @@ body {
     background-color: var(--background-color);
 }
 
-h1 {
+h1,
+h2,
+h3 {
     margin: 0;
 }
 
@@ -44,6 +48,12 @@ h1 {
 .card {
     box-shadow: 5px;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.sub-content-item-card {
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    padding: 20px;
+    margin: 5px;
 }
 
 .card ul {
@@ -89,12 +99,17 @@ h1 {
 .card ul li :hover {
     cursor: pointer;
     color: dodgerblue;
-    /* font-weight: bold; */
 }
 
 .icon {
     width: var(--icon-width);
     height: var(--icon-height);
+    margin-right: 10px;
+}
+
+.sub-content-icon {
+    width: var(--icon-sub-content-width);
+    height: var(--icon-sub-content-height);
     margin-right: 10px;
 }
 
@@ -105,4 +120,51 @@ h1 {
     align-items: center;
     width: 100%;
     height: 100%;
+}
+
+.sub-content-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.sub-content-section-main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.sub-content-section-main .item {
+    display: flex;
+    flex-direction: row;
+}
+
+.sub-content-section-main .item .icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+.sub-content-section-main .item .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (max-width: 991.98px) {
+    .sub-content-section-main {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sub-content-item-card {
+        width: 100%;
+    }
 }

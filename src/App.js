@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './components/About';
 import Skills from './components/Skills';
 import WorkingExp from './components/WorkingExp';
+import Qualification from './components/Qualification';
+import Achievements from './components/Achievements';
 
 function App() {
 
@@ -74,7 +76,9 @@ function App() {
           <Route path='/:email' element={<Main state={cardState} />}>
             <Route path='about' element={<About />} />
             <Route path='skills' element={<Skills />} />
+            <Route path='qualification' element={<Qualification />} />
             <Route path='workingExp' element={<WorkingExp />} />
+            <Route path='achievements' element={<Achievements />} />
           </Route>
         </Routes>
       </BrowserRouter>

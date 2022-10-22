@@ -6,8 +6,8 @@ export const serviceCacheMap = new Map();
 export const getMenuList = async (email) => {
     if (email !== undefined) {
 
-        const response = await axios.get(appProp.service_base_url + '/getMenus?email=' + email);
         if (!serviceCacheMap.has('getMenuList')) {
+            const response = await axios.get(appProp.service_base_url + '/getMenus?email=' + email);
             serviceCacheMap.set('getMenuList', response.data);
         }
 
@@ -18,8 +18,8 @@ export const getMenuList = async (email) => {
 export const getTitleCardContactList = async (email) => {
     if (email !== undefined) {
 
-        const response = await axios.get(appProp.service_base_url + '/getContacts?email=' + email);
         if (!serviceCacheMap.has('getTitleCardContactList')) {
+            const response = await axios.get(appProp.service_base_url + '/getContacts?email=' + email);
             serviceCacheMap.set('getTitleCardContactList', response.data);
         }
 
@@ -30,8 +30,8 @@ export const getTitleCardContactList = async (email) => {
 export const getTitleCardLinkList = async (email) => {
     if (email !== undefined) {
 
-        const response = await axios.get(appProp.service_base_url + '/getLinks?email=' + email);
         if (!serviceCacheMap.has('getTitleCardLinkList')) {
+            const response = await axios.get(appProp.service_base_url + '/getLinks?email=' + email);
             serviceCacheMap.set('getTitleCardLinkList', response.data);
         }
 
@@ -54,11 +54,60 @@ export const getTitleCardName = async (email) => {
 export const getWorkingExps = async (email) => {
     if (email !== undefined) {
 
-        const response = await axios.get(appProp.service_base_url + '/getWorkingExperiences?email=' + email);
         if (!serviceCacheMap.has('getWorkingExps')) {
+            const response = await axios.get(appProp.service_base_url + '/getWorkingExperiences?email=' + email);
             serviceCacheMap.set('getWorkingExps', response.data);
         }
 
         return serviceCacheMap.get('getWorkingExps');
+    }
+}
+
+
+export const getQualification = async (email) => {
+    if (email !== undefined) {
+
+        if (!serviceCacheMap.has('getQualification')) {
+            const response = await axios.get(appProp.service_base_url + '/getQualification?email=' + email);
+            serviceCacheMap.set('getQualification', response.data);
+        }
+
+        return serviceCacheMap.get('getQualification');
+    }
+}
+
+export const getSkills = async (email) => {
+    if (email !== undefined) {
+
+        if (!serviceCacheMap.has('getSkills')) {
+            const response = await axios.get(appProp.service_base_url + '/getSkills?email=' + email);
+            serviceCacheMap.set('getSkills', response.data);
+        }
+
+        return serviceCacheMap.get('getSkills');
+    }
+}
+
+export const getAchievements = async (email) => {
+    if (email !== undefined) {
+
+        if (!serviceCacheMap.has('getAchievements')) {
+            const response = await axios.get(appProp.service_base_url + '/getAchievements?email=' + email);
+            serviceCacheMap.set('getAchievements', response.data);
+        }
+
+        return serviceCacheMap.get('getAchievements');
+    }
+}
+
+export const getAboutCandidate = async (email) => {
+    if (email !== undefined) {
+
+        if (!serviceCacheMap.has('getAboutCandidate')) {
+            const response = await axios.get(appProp.service_base_url + '/getAboutCandidate?email=' + email);
+            serviceCacheMap.set('getAboutCandidate', response.data);
+        }
+
+        return serviceCacheMap.get('getAboutCandidate');
     }
 }

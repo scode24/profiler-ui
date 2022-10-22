@@ -1,0 +1,9 @@
+.sub-content-item-card {
+    width: 50%;
+}
+
+@media (max-width: 991.98px) {
+    .sub-content-item-card {
+        width: 100%;
+    }
+}
