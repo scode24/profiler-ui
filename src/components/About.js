@@ -3,6 +3,7 @@ import iconMap from '../icon-map.json';
 import htmlPerser from 'html-react-parser';
 import * as service from '../services';
 import { useNavigate } from 'react-router-dom';
+import '../styles/About.css';
 
 function About(props) {
 
@@ -39,7 +40,7 @@ function About(props) {
                                 {htmlPerser(iconMap['SubContent-About'])}
                             </div>
                             <div className='info'>
-                                <span style={{ 'textAlign': 'justify' }}>{about.about}</span>
+                                <span className='text-area'>{about.about}</span>
                             </div>
                         </div>
                         : <></>

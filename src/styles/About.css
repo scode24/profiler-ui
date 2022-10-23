@@ -1,0 +1,11 @@
+.text-area {
+    text-align: justify;
+    height: 50vh;
+    overflow: auto;
+}
+
+@media (max-width: 575.98px) {
+    .text-area {
+        height: 60vh;
+    }
+}
