@@ -15,6 +15,8 @@ export const selectMenu = (menuTitle, email) => {
             return ('/' + email + '/workingExp')
         case 'Achievements':
             return ('/' + email + '/achievements')
+        case 'Projects':
+            return ('/' + email + '/projects')
         default:
             return '/'
     }
@@ -126,5 +128,17 @@ export const getAboutCandidate = async (email) => {
         }
 
         return serviceCacheMap.get('getAboutCandidate');
+    }
+}
+
+export const getProjects = async (email) => {
+    if (email !== undefined) {
+
+        if (!serviceCacheMap.has('getProjects')) {
+            const response = await axios.get(appProp.service_base_url + '/getProjects?email=' + email);
+            serviceCacheMap.set('getProjects', response.data);
+        }
+
+        return serviceCacheMap.get('getProjects');
     }
 }

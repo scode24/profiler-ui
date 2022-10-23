@@ -1,0 +1,35 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel img {
+    height: 300px;
+    width: 100%;
+}
+
+.empty-image-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+    background-color: var(--border-color);
+}
+
+.carousel .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 767.98px) {
+    .carousel img {
+        height: 300px;
+        width: 100%;
+    }
+}

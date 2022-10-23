@@ -11,6 +11,8 @@
     --profile-pic-width: 130px;
     --header-profile-pic-height: 35px;
     --header-profile-pic-width: 35px;
+    --project-pic-height: 300px;
+    --project-pic-width: 400px;
 }
 
 body {
@@ -23,6 +25,10 @@ h1,
 h2,
 h3 {
     margin: 0;
+}
+
+td {
+    padding-right: 20px;
 }
 
 /* span {
@@ -126,11 +132,13 @@ h3 {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    height: 70vh;
+    overflow: auto;
 }
 
 .sub-content-section-main {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 70%;
     height: 100%;
     margin-top: 10px;
@@ -139,6 +147,7 @@ h3 {
 .sub-content-section-main .item {
     display: flex;
     flex-direction: row;
+    height: fit-content;
 }
 
 .sub-content-section-main .item .icon {
@@ -165,13 +174,22 @@ h3 {
 }
 
 @media (max-width: 991.98px) {
+
     .sub-content-section-main {
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: 100%;
+        margin-top: 10px;
+    }
+
+    .sub-content-item-card {
+        width: -webkit-fill-available;
     }
 }
 
-@media (max-width: 575.98px) {
+/* @media (max-width: 575.98px) {
     .sub-content-item-card {
         width: 100%;
     }
-}
+} */

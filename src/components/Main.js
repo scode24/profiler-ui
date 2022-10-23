@@ -58,6 +58,9 @@ function Main(props) {
             case 'Achievements':
                 navigate('/' + param.email + '/achievements')
                 break;
+            case 'Projects':
+                navigate('/' + param.email + '/projects')
+                break;
 
             default:
                 break;

@@ -10,6 +10,7 @@ import WorkingExp from './components/WorkingExp';
 import Qualification from './components/Qualification';
 import Achievements from './components/Achievements';
 import * as service from './services';
+import Projects from './components/Projects';
 
 function App() {
 
@@ -124,6 +125,7 @@ function App() {
             <Route path='qualification' element={<Qualification nav={getNavOption} />} />
             <Route path='workingExp' element={<WorkingExp nav={getNavOption} />} />
             <Route path='achievements' element={<Achievements nav={getNavOption} />} />
+            <Route path='projects' element={<Projects nav={getNavOption} />} />
           </Route>
         </Routes>
       </BrowserRouter>
