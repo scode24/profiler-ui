@@ -82,7 +82,7 @@ function Main(props) {
                             {titleCardName !== undefined ?
                                 <div className='section'>
                                     <img className='profile-pic' src={'data:image/jpeg;base64,' + titleCardName.image} alt='profile-pic'></img>
-                                    <span>{titleCardName.name}</span>
+                                    <span><strong>{titleCardName.name}</strong></span>
                                     <span>{titleCardName.email}</span>
                                 </div> : <></>
                             }
@@ -91,13 +91,13 @@ function Main(props) {
                                     titleCardLinkList !== undefined ?
                                         titleCardLinkList.map((menu) => {
                                             return (
-                                                <li key={0}>
+                                                <li key={menu.id}>
                                                     <div className='list-item'>
                                                         <div className='icon'>
                                                             {htmlPerser(iconMap['Link'])}
                                                         </div>
                                                         <div className='content'>
-                                                            <span><a href={menu.link}>{menu.link}</a></span>
+                                                            <span><a href={menu.link}>{menu.name}</a></span>
                                                         </div>
                                                     </div>
                                                 </li>

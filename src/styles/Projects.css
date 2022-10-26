@@ -8,7 +8,7 @@
 
 .sub-content-project-section-main .project-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: fit-content;
 }
 

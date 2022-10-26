@@ -28,7 +28,8 @@ h3 {
 }
 
 td {
-    padding-right: 20px;
+    text-align: justify;
+    padding: 10px;
 }
 
 /* span {
@@ -187,9 +188,3 @@ td {
         width: -webkit-fill-available;
     }
 }
-
-/* @media (max-width: 575.98px) {
-    .sub-content-item-card {
-        width: 100%;
-    }
-} */

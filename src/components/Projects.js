@@ -38,9 +38,9 @@ function Projects(props) {
             <div className='sub-content-section'>
                 <div className='sub-content-project-section-main'>
                     {projects !== undefined ?
-                        projects.map((item, index) => {
+                        projects.map((item) => {
                             return (
-                                <div className='project-item sub-content-item-card' key={index}>
+                                <div className='project-item sub-content-item-card' key={item.projects.id}>
                                     <div className='icon'>
                                         <Carousel images={item.projectImages} />
                                     </div>

@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Profiler UI 1.0
+
+Profiler shows user's profile with all the relevant information in an interactive way. User can create profiles by
+calling some APIs defined. User can insert/update/delete information just by sending JSON data to particular API.
+
+### Profiler Service API Documentation
+
+* [API Documentation](https://3.110.179.186:8080/swagger-ui.html#/)
+
+
+
+# Getting Started with Profiler App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
