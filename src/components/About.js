@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import iconMap from '../icon-map.json';
-import htmlPerser from 'html-react-parser';
 import * as service from '../services';
 import { useNavigate } from 'react-router-dom';
 import '../styles/About.css';
@@ -37,7 +35,7 @@ function About(props) {
                     {about !== undefined ?
                         <div className='item sub-content-item-card'>
                             <div className='icon'>
-                                {htmlPerser(iconMap['SubContent-About'])}
+                                {/* {htmlPerser(iconMap['SubContent-About'])} */}
                             </div>
                             <div className='info'>
                                 <span className='text-area'>{about.about}</span>

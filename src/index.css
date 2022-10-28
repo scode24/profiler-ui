@@ -27,16 +27,6 @@ h3 {
     margin: 0;
 }
 
-td {
-    text-align: justify;
-    padding: 10px;
-}
-
-/* span {
-    width: 70%;
-    word-wrap: break-word;
-} */
-
 .section {
     padding: 10px;
     display: flex;

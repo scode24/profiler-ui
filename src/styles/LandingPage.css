@@ -1,0 +1,19 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.landing-page .title {
+    font-size: 100px
+}
+
+@media (max-width: 991.98px) {
+    .landing-page .title {
+        font-size: 50px
+    }
+}

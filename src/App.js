@@ -11,6 +11,7 @@ import Qualification from './components/Qualification';
 import Achievements from './components/Achievements';
 import * as service from './services';
 import Projects from './components/Projects';
+import LandingPage from './components/LandingPage';
 
 function App() {
 
@@ -119,6 +120,7 @@ function App() {
 
       <BrowserRouter>
         <Routes>
+          <Route exact path='/' element={<LandingPage />} />
           <Route path='/:email' element={<Main state={cardState} />}>
             <Route path='about' element={<About nav={getNavOption} />} />
             <Route path='skills' element={<Skills nav={getNavOption} />} />

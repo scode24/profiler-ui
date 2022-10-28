@@ -45,15 +45,20 @@ function Projects(props) {
                                         <Carousel images={item.projectImages} />
                                     </div>
                                     <div className='info'>
-                                        <table>
-                                            <tbody>
-                                                <tr><td><strong>Name</strong></td><td>{item.projects.name}</td></tr>
-                                                <tr><td><strong>Description</strong></td><td>{item.projects.description}</td></tr>
-                                                <tr><td><strong>Technology</strong></td><td>{item.projects.technology}</td></tr>
-                                                <tr><td><strong>Type</strong></td><td>{item.projects.type}</td></tr>
-                                                <tr><td><strong>Company</strong></td><td>{item.projects.associatedCompany}</td></tr>
-                                            </tbody>
-                                        </table>
+                                        <span><strong>Name</strong></span>
+                                        <span>{item.projects.name}</span>
+
+                                        <span><strong>Description</strong></span>
+                                        <span>{item.projects.description}</span>
+
+                                        <span><strong>Technology</strong></span>
+                                        <span>{item.projects.technology}</span>
+
+                                        <span><strong>Type</strong></span>
+                                        <span>{item.projects.type}</span>
+
+                                        <span><strong>Company</strong></span>
+                                        <span>{item.projects.associatedCompany}</span>
                                     </div>
                                 </div>
                             )
@@ -61,7 +66,7 @@ function Projects(props) {
                     }
 
                     {navData !== undefined ?
-                        <div className='item sub-content-item-card nav-page-bar'>
+                        <div className='item sub-content-item-card project-nav-page-bar'>
                             {navData.previous !== null ? <span onClick={() => navigator(service.selectMenu(navData.previous, email))}>&lt; {navData.previous}</span> : <span></span>}
                             {navData.next !== null ? <span onClick={() => navigator(service.selectMenu(navData.next, email))}>{navData.next} &gt;</span> : <span></span>}
                         </div> : <></>

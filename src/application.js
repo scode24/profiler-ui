@@ -1,7 +1,10 @@
 
+const server_port = 'http://13.127.66.199:8080';
+
 const config = {
-    // service_base_url: 'http://3.110.179.186:8080/api'
-    service_base_url: 'http://localhost:8080/api'
+    server: server_port,
+    service_base_url: server_port + '/api',
+    swagger_base_url: server_port + '/swagger-ui.html'
 }
 
 export default config;
